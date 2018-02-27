@@ -1,0 +1,40 @@
+page-list {
+  .searchbar {
+    position: absolute;
+    bottom: 0;
+
+    width: 100%;
+
+    background-color: lightgrey;
+    padding: 4px;
+    
+    .add-item-form {
+      display: flex;
+    }
+
+    .add-items {
+      padding: 4px;
+      border-radius: 5px;
+      height: 4rem;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: #000;
+      background-color: #fff;
+      margin-right: 4px;
+
+      .text-input {
+        margin: 8px;
+      }
+    }
+
+    .add-button {
+      align-self: flex-end;
+
+      button {
+        height: 40px;
+        margin: 0;
+      }
+
+    }
+  }
+}
