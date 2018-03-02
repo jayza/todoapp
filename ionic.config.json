@@ -1,6 +1,6 @@
 {
   "name": "todo",
-  "app_id": "",
+  "app_id": "be11c4e6",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

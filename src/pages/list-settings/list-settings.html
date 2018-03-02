@@ -16,7 +16,7 @@
 <ion-content>
   <ion-item>
     <ion-label>Hide completed items</ion-label>
-    <ion-toggle [(ngModel)]="hideCheckedItems"></ion-toggle>
+    <ion-toggle [(ngModel)]="hideCheckedItems" (ionChange)="saveSettings()"></ion-toggle>
   </ion-item>
 </ion-content>
 

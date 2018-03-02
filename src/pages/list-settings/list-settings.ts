@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { List } from '../../models/list/list.model';
-import { Config } from 'ionic-angular/config/config';
+import { AppPreferences } from '@ionic-native/app-preferences';
 
 /**
  * Generated class for the ListSettingsPage page.
@@ -21,8 +21,18 @@ export class ListSettingsPage {
   
   hideCheckedItems: boolean = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public config: Config) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private appPref: AppPreferences) {
     this.list = this.navParams.get('list');
+
+    appPref.fetch('list', 'hideCheckedItems').then(value => {
+      console.log(value);
+    });
+  }
+
+  saveSettings() {
+    this.appPref.store('list', 'hideCheckedItems', this.hideCheckedItems).then(value => {
+      console.log('stored something', value);
+    });
   }
 
   ionViewDidLoad() {
