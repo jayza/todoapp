@@ -8,6 +8,11 @@
 
   <ion-navbar>
     <ion-title>{{ list.name }}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only *ngIf="newValues" (click)="saveSettings()">
+        Save
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -15,7 +20,7 @@
 <ion-content>
   <ion-item>
     <ion-label>Hide completed items</ion-label>
-    <ion-toggle [(ngModel)]="list.settings.hideCheckedItems"></ion-toggle>
+    <ion-toggle [(ngModel)]="settings.hideCheckedItems" (ionChange)="newValuesToBeChanged('hideCheckedItems')"></ion-toggle>
   </ion-item>
 </ion-content>
 

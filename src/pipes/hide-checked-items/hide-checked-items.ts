@@ -12,7 +12,7 @@ import { Item } from '../../models/item/item.model';
 export class HideCheckedItemsPipe implements PipeTransform {
   transform(items: Item[], hideCheckedItems, ...args) {
     return items.filter(item => {
-      return (hideCheckedItems) ? !item.checked : item;
+      return (hideCheckedItems) ? !item.checked : true;
     });
   }
 }

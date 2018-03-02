@@ -37,15 +37,18 @@ export class ListPage {
           this.list[val.key] = val.payload.val();
         });
       });
-
   }
 
   hideCheckedItems(item: Item) {
     return !item.checked;
   }
 
+  ionViewDidEnter() {
+    console.log(this.list);
+  }
+
   // Remove subscriptions.
-  ionViewDidLeave() {
+  ionViewWillUnload() {
     this.subscription.unsubscribe();
   }
 
@@ -74,7 +77,7 @@ export class ListPage {
 
   removeItem(item) {
     let index = this.list.items.indexOf(item);
-    this.list.items.splice(index, 1);
+    this.list.items[index].deleted = true;
 
     this.listService.updateList(this.list);
   }

@@ -1,5 +1,6 @@
 export interface Item {
     key?: string;
     name: string;
-    checked: boolean;
+    checked?: boolean;
+    deleted?: boolean;
 }
