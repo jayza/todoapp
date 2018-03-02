@@ -24,7 +24,7 @@
     <ion-list-header>
       Category
     </ion-list-header>
-    <ion-item-sliding *ngFor="let item of list.items | hideCheckedItems">
+    <ion-item-sliding *ngFor="let item of (list.items | hideCheckedItems: list.settings.hideCheckedItems)">
       <ion-item>
         <ion-checkbox color="dark" checked="{{item.checked}}" (click)="checkItem(item)"></ion-checkbox>
         <ion-label>{{item.name}}</ion-label>

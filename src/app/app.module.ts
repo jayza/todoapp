@@ -5,7 +5,6 @@ import { MyApp } from './app.component';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { AppPreferences } from '@ionic-native/app-preferences';
 
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
@@ -35,7 +34,6 @@ import { PipesModule } from '../pipes/pipes.module';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ListService,
     PipesModule,
-    AppPreferences,
   ]
 })
 export class AppModule {}

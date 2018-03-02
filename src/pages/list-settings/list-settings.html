@@ -12,11 +12,10 @@
 
 </ion-header>
 
-
 <ion-content>
   <ion-item>
     <ion-label>Hide completed items</ion-label>
-    <ion-toggle [(ngModel)]="hideCheckedItems" (ionChange)="saveSettings()"></ion-toggle>
+    <ion-toggle [(ngModel)]="list.settings.hideCheckedItems"></ion-toggle>
   </ion-item>
 </ion-content>
 

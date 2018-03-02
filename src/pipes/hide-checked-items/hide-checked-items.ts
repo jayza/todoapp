@@ -10,9 +10,9 @@ import { Item } from '../../models/item/item.model';
   name: 'hideCheckedItems',
 })
 export class HideCheckedItemsPipe implements PipeTransform {
-  transform(items: Item[], ...args) {
+  transform(items: Item[], hideCheckedItems, ...args) {
     return items.filter(item => {
-      return !item.checked;
+      return (hideCheckedItems) ? !item.checked : item;
     });
   }
 }
